@@ -14,6 +14,6 @@ public class Log4jHandler {
     private static final Logger logger = LogManager.getLogger(Log4jHandler.class);
 
     public void handler() {
-        logger.info("123");
+        logger.info("log4j log");
     }
 }

@@ -10,4 +10,9 @@ public class HelloHandler {
         System.out.println("Hello Lambda!");
         return "Hello Lambda!";
     }
+
+    public String handleWithParam(String message) {
+        System.out.println(String.format("Hello %s", message));
+        return String.format("Hello %s", message);
+    }
 }

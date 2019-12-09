@@ -15,7 +15,10 @@
         <module>lambda-env</module>
         <module>lambda-log</module>
         <module>lambda-input-output</module>
+        <module>lambda-api-gateway</module>
     </modules>
+
+    
 
 
 </project>
