@@ -1,31 +1,18 @@
 package com.fleetup.lambda.handler;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import com.amazonaws.services.lambda.runtime.Context;
+import com.amazonaws.services.lambda.runtime.RequestHandler;
+import lombok.*;
 
 /**
  * @author SZ Team David Hua
  * @date 2019/11/22
  * @desc
  */
-public class POJOParamHandler {
+public class POJOParamHandler implements RequestHandler<RequestDTO, ResponseDTO> {
 
-    @Getter
-    @Setter
-    @ToString
-    class RequestDTO {
-        private String request;
-    }
-
-    @Getter
-    @Setter
-    @ToString
-    class ResponseDTO {
-        private String response;
-    }
-
-    public ResponseDTO handle(RequestDTO request) {
+    @Override
+    public ResponseDTO handleRequest(RequestDTO request, Context context) {
         System.out.println("accept request : " + request.toString());
 
         ResponseDTO responseDTO = new ResponseDTO();
@@ -33,3 +20,14 @@ public class POJOParamHandler {
         return responseDTO;
     }
 }
+
+@Data
+class RequestDTO {
+    private String request;
+}
+
+@Data
+class ResponseDTO {
+    private String response;
+}
+
