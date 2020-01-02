@@ -17,8 +17,18 @@ public class StreamDataLogHandler implements RequestHandler<KinesisEvent, Void> 
         LambdaLogger logger = context.getLogger();
         logger.log("accept request ");
         for(KinesisEvent.KinesisEventRecord rec : event.getRecords()) {
-            System.out.println(new String(rec.getKinesis().getData().array()));
+            String stringData = new String(rec.getKinesis().getData().array());
+            for (String str : stringData.split("\\|")) {
+                System.out.println(str);
+            }
         }
         return null;
+    }
+
+    public static void main(String[] args) {
+        String temp = "123|435|123123|";
+        for (String s : temp.split("\\|")) {
+            System.out.println("result=" + s);
+        }
     }
 }

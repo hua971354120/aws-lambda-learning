@@ -22,6 +22,8 @@
         <module>lambda-input-output</module>
         <module>lambda-api-gateway</module>
         <module>lambda-kinesis</module>
+        <module>lambda-mutithread</module>
+        <module>lambda-slf4j</module>
     </modules>
 
     <build>
